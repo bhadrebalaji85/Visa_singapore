@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_51"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/selenium-java-2.47.1.zip"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/poi-ooxml-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/poi-ooxml-schemas-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/dom4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/extentreports-2.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/apache-logging-log4j.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/jsoup-1.8.3.jar"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Desktop/Jar/selenium-server-standalone-3.0.0-beta4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,23 @@
+package config;
+
+public class Sample {
+
+	/**
+	 * @param args  1 1 2 3 5 
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int k=0;
+		int a=1,b=1;
+		System.out.println(" 1 1");
+		while(k<50)
+		{ 
+			k= a + b;
+			System.out.println(+k);
+	          a=b;
+	          b=k;
+	
+		}
+	}}
+

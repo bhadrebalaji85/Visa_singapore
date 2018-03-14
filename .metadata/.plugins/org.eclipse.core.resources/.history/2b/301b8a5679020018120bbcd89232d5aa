@@ -1,0 +1,17 @@
+package executionEngine;
+
+public class Sample {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int x=5,y;
+		y=++x * ++x ;
+		
+		System.out.println(+y);
+
+	}
+
+}

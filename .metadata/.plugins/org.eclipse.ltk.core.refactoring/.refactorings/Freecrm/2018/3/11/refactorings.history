@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.crm.qa.Testcases.ContactsPageTests&apos; to &apos;ContactsPageTest&apos;&#x0D;&#x0A;- Original project: &apos;FreeCRM&apos;&#x0D;&#x0A;- Original element: &apos;com.crm.qa.Testcases.ContactsPageTests&apos;&#x0D;&#x0A;- Renamed element: &apos;com.crm.qa.Testcases.ContactsPageTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ContactsPageTests&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java&lt;com.crm.qa.Testcases{ContactsPageTests.java[ContactsPageTests" matchStrategy="1" name="ContactsPageTest" qualified="false" references="true" similarDeclarations="false" stamp="1520874248542" textual="false" version="1.0"/>
+</session>

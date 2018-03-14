@@ -1,0 +1,24 @@
+package com.crm.qa.Testcases;
+
+import java.io.IOException;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.LoginPage;
+
+public class LoginPageTest extends TestBase{
+
+	public LoginPageTest() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	@BeforeMethod
+	public void setup() throws IOException
+	{
+		initlization();
+		LoginPage login=new LoginPage();
+	}
+
+}

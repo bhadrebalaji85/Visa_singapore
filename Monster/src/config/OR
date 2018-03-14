@@ -1,0 +1,16 @@
+# Home page object
+
+btn_Signin_Homepage=//*[@id='header']/div[1]/div/div[4]/div/a[1]
+
+
+# Login Page Object
+
+txt_UserName=//*[@id='username_login']
+txt_Password=.//*[@id='password_input']
+
+password=//input[@id='passwd_temp']
+btn_Signin_page=//*[@id='button']
+btn_ProfilePage=//*[@id='ProfileOverlay_close_other']
+validate_UserName=//*[@id='header_large']/div[1]/div[3]/div[4]
+hover_Logout_menu=//*[@id='header_large']/div[2]/div[2]/div/div[1]/img
+btn_logout=//*[@id='header_large']/div[2]/div[2]/div/div[2]/div[2]/div[3]/div[1]/a

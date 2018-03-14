@@ -1,0 +1,61 @@
+package com.crm.qa.Testcases;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.HomePage;
+import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.TestUtil;
+
+public class LoginPageTest extends TestBase{
+
+	public LoginPage login;
+	HomePage homepage;
+	public LoginPageTest() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	@BeforeMethod
+	public void setup() throws IOException
+	{
+		initlization();
+		 login=new LoginPage();
+	}
+
+	@Test(enabled=true)
+	public void loginpagetitleTest()
+	{
+		String title=login.validatepagetitle();
+		System.out.println("Page title:"+title);
+		Assert.assertEquals(title, "#1 Free CRM for Any Business: Online Customer Relationship Software");
+	}
+	
+	@Test
+	public void LogoTest()
+	{
+		boolean flag=login.validatelogo();
+		Assert.assertTrue(flag);
+	}
+	
+	@Test(priority=1)
+	public void LoginTest() throws IOException
+	{
+		//TestUtil.takeScreenshotAtEndOfTest1("login");
+		homepage=login.login(prop.getProperty("username"), prop.getProperty("password"));
+		
+	}
+	
+	@AfterMethod
+	public void teardown()
+	{
+		driver.quit();
+	}
+	
+}
+	

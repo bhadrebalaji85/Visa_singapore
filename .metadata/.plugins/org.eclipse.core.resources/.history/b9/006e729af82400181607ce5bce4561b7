@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Free CRM Application Testing with POM" verbose="1" >
+  <test name="Free CRM Testing" >
+    
+	<listeners>
+		<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
+	</listeners>
+    
+    <classes>
+      <class name="com.crm.qa.Testcases.ContactsPageTests"/>
+      <class name="com.crm.qa.Testcases.HomePageTest"/>
+      <class name="com.crm.qa.Testcases.LoginPageTest"/>
+    </classes>
+ </test>
+</suite>

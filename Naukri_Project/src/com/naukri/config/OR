@@ -1,0 +1,16 @@
+# Job recruitment page objects
+Menu_login_menu=mTxt
+
+# Login Page Object
+txt_username=email
+txt_password=PASSWORD
+btn_Login=//*[@id='lgnFrmNew' or @id='lgnFrm']//button[@value='Login']
+
+
+
+
+
+
+
+
+

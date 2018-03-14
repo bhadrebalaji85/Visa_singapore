@@ -1,0 +1,33 @@
+package com.crm.qa.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestBase {
+	
+	static WebDriver driver;
+	static Properties prop;
+	
+	public TestBase() throws IOException
+	{
+		prop=new Properties();
+		FileInputStream fs= new FileInputStream("E://webdriver_Framework//FreeCRM//src//main//java//com//crm//qa//Config//config.properties");
+		prop.load(fs);
+		
+	}
+	
+	public static void initlization()
+	{
+		String browsername=prop.getProperty("browser");
+		if(browsername.equals("chrome"))
+		{
+			driver=new ChromeDriver();
+		}
+	}
+
+}

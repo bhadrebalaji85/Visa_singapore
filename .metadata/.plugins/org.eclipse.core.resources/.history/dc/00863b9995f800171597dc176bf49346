@@ -1,0 +1,43 @@
+package com.naukri.executionEngine;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DriverScript {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+       WebDriver driver =new ChromeDriver();
+       driver.get("https://www.naukri.com/");
+       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       List <WebElement> element=driver.findElements(By.className("mTxt"));
+       element.get(5).click();
+       Thread.sleep(5);
+       driver.switchTo().frame(driver.findElement(By.id("lgnFrmNew")));
+//       String handle= driver.getWindowHandle();
+//       System.out.println(handle);
+//       driver.switchTo().frame(handle);
+//       WebElement element1 =driver.findElement(By.className("blueBtn"));
+//       JavascriptExecutor executor = (JavascriptExecutor)driver;
+//       executor.executeScript("arguments[0].click()", element1);
+//       element1.click();
+       driver.findElement(By.xpath("//a[@href='https://my.naukri.com//manager/resmanpage0.php']")).click();
+       driver.close();
+       //Thread.sleep(5);
+       //driver.findElement(By.xpath("//a[text()='Register Now']")).click();
+       
+       
+       
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.crm.qa.util;
+
+import java.io.IOException;
+
+import com.crm.qa.base.TestBase;
+
+public class TestUtil extends TestBase{
+
+ public TestUtil() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+ 		public static int IMPLICIT_WAIT=10;
+ 		public static int PAGE_WAIT=10;
+ 
+ 		public void switchToFrame(String framename)
+ 			{
+ 				driver.switchTo().frame(prop.getProperty(""));
+ 			}
+ 
+}

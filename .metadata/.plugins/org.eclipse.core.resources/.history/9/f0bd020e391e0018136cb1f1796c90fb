@@ -1,0 +1,56 @@
+package com.crm.qa.pages;
+
+import java.io.IOException;
+
+import javax.xml.xpath.XPath;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.base.TestBase;
+
+public class HomePage extends TestBase {
+
+	@FindBy(xpath="//td[contains(text(),'abc hadoop')]")
+	WebElement UserName;
+	
+	@FindBy(xpath="//*[text()='Contacts']")
+	WebElement contacts_link;
+	
+	@FindBy(xpath="//*[text()='Deals']")
+	WebElement Deals_link;
+	
+	@FindBy(xpath="//*[text()='Tasks']")
+	WebElement Tasks_Link;
+	
+	public HomePage() throws IOException
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	public String VerifyHomePageTitle()
+	{
+		return driver.getTitle();
+	}
+	
+	public ContactPage Clickoncontacts()
+	{
+		contacts_link.click();
+		return new ContactPage();
+	}
+	
+	public DealPage ClickonDealPage()
+	{
+		Deals_link.click();
+		return new DealPage();
+	}
+	
+	public Taskspage ClickonTaskPage() throws IOException
+	{
+		Deals_link.click();
+		return new Taskspage();
+	}
+	
+	
+}

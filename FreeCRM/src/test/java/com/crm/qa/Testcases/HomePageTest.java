@@ -1,0 +1,61 @@
+package com.crm.qa.Testcases;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+
+import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.ContactPage;
+import com.crm.qa.pages.HomePage;
+import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.TestUtil;
+
+public class HomePageTest extends TestBase{
+	
+	LoginPage loginpage;
+	HomePage homepage;
+	TestUtil testutil;
+	ContactPage contactpage;
+  
+  public HomePageTest() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+@BeforeMethod
+  public void beforeMethod() throws IOException {
+	initlization();
+	loginpage= new LoginPage();
+	testutil=new TestUtil();
+	contactpage=new ContactPage();
+	homepage=loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
+  }
+
+  @Test
+  public void VerifyHomePageTitleTest() {
+	  String title=homepage.VerifyHomePageTitle();
+	  Assert.assertEquals(title, "CRMPRO","Home Page Title is not correct");
+  }
+  @Test
+  public void VerifyUserNameTest()
+  {
+	  testutil.switchToFrame(prop.getProperty("HomePageFrame"));
+	  Assert.assertTrue(homepage.verifycorrectusername()); 
+  }
+  
+  @Test
+  public void VerifycontactsinkTest() throws IOException
+  {
+	  testutil.switchToFrame(prop.getProperty("HomePageFrame"));
+	  contactpage=homepage.Clickoncontacts();
+  }
+  
+  
+  @AfterMethod
+  public void afterMethod() {
+	  driver.quit();
+  }
+}

@@ -1,0 +1,104 @@
+package config;
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import libarary.log;
+
+import org.openqa.selenium.By;
+import static executionEngine.DriverScript.OR;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+
+public class ActionKeywords {
+	public static WebDriver driver;
+	
+	public static log logger;
+    
+   
+    
+	public static void openBrowser(String object) {
+		driver = new FirefoxDriver();
+		logger.generatelog("Opening the browser");
+	}
+
+	public static void navigateURL(String object) {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get(Constants.URL);
+	}
+	
+	
+
+	public static void window_Maximize(String object) {
+		driver.manage().window().maximize();
+	}
+
+	public static void close_Popup(String object) {
+		String home_page = driver.getWindowHandle();
+		System.out.println(home_page);
+		Set<String> windows = driver.getWindowHandles();
+		System.out.println(windows.size());
+		Iterator iterator = windows.iterator();
+		while (iterator.hasNext()) {
+
+			String currentwindowid = iterator.next().toString();
+
+			if (!currentwindowid.equals(home_page)) {
+				driver.switchTo().window(currentwindowid);
+				driver.close();
+			}
+
+		}
+		driver.switchTo().window(home_page);
+	}
+
+	public static void click(String object) {
+		//driver.findElement(By.xpath(OR.)).click();
+		driver.findElement(By.xpath(OR.getProperty(object))).click();
+
+	}
+
+	public static void input_Username(String object) {
+		driver.findElement(By.xpath(OR.getProperty(object))).clear();
+		driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(Constants.UserName);
+
+	}
+	
+	public static void input_Password(String object){
+		
+		driver.findElement(By.xpath(OR.getProperty(object))).sendKeys(Constants.Password);
+	}
+	
+	
+	public static void waitFor(String object) throws Exception{
+		//Thread.sleep(8000);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		}
+	
+	
+	public static void validate(String object){
+		Assert.assertEquals(driver.findElement(By.xpath(OR.getProperty(object))).getText(),"Balaji Bhadre");
+	}
+	
+	public static void hover_mouse(String object) throws InterruptedException{
+		
+		WebElement webElement = driver.findElement(By.xpath(OR.getProperty(object)));
+		Actions act = new Actions(driver);
+		        act.moveToElement(webElement).perform();//This opens menu list
+
+		        Thread.sleep(5000);//This line will help you to hold menu 	
+	}
+	
+	
+	
+	public static void Close_Browser(String object){
+		driver.close();
+	}
+}

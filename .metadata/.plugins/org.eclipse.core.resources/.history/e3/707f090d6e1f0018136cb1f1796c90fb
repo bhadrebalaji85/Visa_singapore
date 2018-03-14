@@ -1,0 +1,71 @@
+package com.crm.qa.Testcases;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
+
+import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.ContactPage;
+import com.crm.qa.pages.HomePage;
+import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.TestUtil;
+
+public class ContactsPageTests extends TestBase {
+
+		HomePage homepage;
+		LoginPage loginpage;
+		TestUtil testutil;
+		ContactPage contactpage;
+
+			public ContactsPageTests() throws IOException
+				{
+					super();
+					// TODO Auto-generated constructor stub
+				}
+
+			@BeforeMethod
+			public void beforeMethod() throws IOException 
+			{
+				initlization();
+				homepage = new HomePage();
+				testutil = new TestUtil();
+				loginpage = new LoginPage();
+				contactpage = new ContactPage();
+				homepage = loginpage.login(prop.getProperty("username"),
+				prop.getProperty("password"));
+				// testutil.switchToFrame(prop.getProperty("HomePageFrame"));
+				driver.switchTo().frame("mainpanel");
+
+				contactpage = homepage.Clickoncontacts();
+
+			}
+
+				@Test(enabled = false)
+				public void verifycontactlabeltest()
+				{
+					Assert.assertTrue(contactpage.contactlabel(), "Label is not present");
+				}
+
+				@Test
+				public void verifycontacttests() 
+				{
+					contactpage.selectcontacts("Saanvi Bhadre");
+				}
+
+					@AfterMethod
+						public void afterMethod() 
+					{
+							driver.quit();
+					}
+					
+					
+					@Test
+					public void vlidateCreateNewContacts()
+					{
+						
+					}
+
+}

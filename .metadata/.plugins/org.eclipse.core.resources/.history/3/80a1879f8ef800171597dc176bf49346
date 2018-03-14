@@ -1,0 +1,35 @@
+package com.naukri.executionEngine;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DriverScript {
+
+	/**
+	 * @param args
+	 * @throws InterruptedException 
+	 */
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+       WebDriver driver =new ChromeDriver();
+       driver.get("https://www.naukri.com/");
+       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+       List <WebElement> element=driver.findElements(By.className("mTxt"));
+       element.get(5).click();
+       String handle= driver.getWindowHandle();
+       System.out.println(handle);
+       driver.switchTo().window(30F0189FA025A2FC3C41923C8CEF6989);
+       driver.close();
+       //Thread.sleep(5);
+       //driver.findElement(By.xpath("//a[text()='Register Now']")).click();
+       
+       
+       
+	}
+
+}
