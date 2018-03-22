@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suit for different program]">
-  <test name="Elements of Selenium(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.naukri.executionEngine.Actions_class">
+      <class name="com.naukri.executionEngine.Dropdown">
         <methods>
-          <include name="f"/>
+          <include name="login"/>
         </methods>
-      </class> <!-- com.naukri.executionEngine.Actions_class -->
+      </class> <!-- com.naukri.executionEngine.Dropdown -->
     </classes>
-  </test> <!-- Elements of Selenium(failed) -->
-</suite> <!-- Failed suite [Suit for different program] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

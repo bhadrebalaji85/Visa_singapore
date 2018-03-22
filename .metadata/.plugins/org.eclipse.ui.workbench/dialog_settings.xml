@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
 		<item value="8" key="DIALOG_X_ORIGIN"/>
-		<item value="-9" key="DIALOG_Y_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="533" key="dialogHeight"/>
@@ -22,5 +22,7 @@
 			<item value="org.eclipse.m2e"/>
 			<item value="org.testng.eclipse"/>
 		</list>
+	</section>
+	<section name="ImportExportAction">
 	</section>
 </section>
